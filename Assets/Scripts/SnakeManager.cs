@@ -34,9 +34,9 @@ public class SnakeManager : MonoBehaviour {
 
     private void SnakeGenerate()
     {
-        Instantiate(snakePrefab, new Vector3(327f, 2.6f, 366.6f), Quaternion.identity);
-        Instantiate(snakePrefab, new Vector3(327f, 2.6f, 403.2f), Quaternion.identity);
-        Instantiate(snakePrefab, new Vector3(327f, 2.6f, 323.8f), Quaternion.identity);
+        Instantiate(snakePrefab, new Vector3(327f, 2.6f, 366.6f), Quaternion.Euler(0, 110, 0));
+        Instantiate(snakePrefab, new Vector3(327f, 2.6f, 403.2f), Quaternion.Euler(0, 110, 0));
+        Instantiate(snakePrefab, new Vector3(327f, 2.6f, 323.8f), Quaternion.Euler(0, 110, 0));
     }
 
     private void MiniCubeGenerate()
