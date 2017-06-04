@@ -31,11 +31,12 @@ public class miniSnakeAttack : MonoBehaviour {
         {
             float randZ = rnd.Next(335, 390);
             float randX = rnd.Next(310, 330);
-            Instantiate(miniSnakePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.identity);
+            Instantiate(miniSnakePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.Euler(0, 110, 0));
             float randZ2 = rnd.Next(335, 390);
             float randX2 = rnd.Next(310, 330);
-            Instantiate(miniSnakePrefab, new Vector3(randX2, 1.0f, randZ2), Quaternion.identity);
+            Instantiate(miniSnakePrefab, new Vector3(randX2, 1.0f, randZ2), Quaternion.Euler(0, 110, 0));
             collided = true;
+            Destroy(this.gameObject);
         }
         if (collision.gameObject.name == "OVRPlayerController")
         {

@@ -41,6 +41,6 @@ public class SnakeManager : MonoBehaviour {
 
     private void MiniSnakeGenerate()
     {
-        Instantiate(miniSnakePrefab, new Vector3(307.7f, 2.6f, 403.2f), Quaternion.identity);
+        Instantiate(miniSnakePrefab, new Vector3(307.7f, 2.6f, 403.2f), Quaternion.Euler(0, 110, 0));
     }
 }
