@@ -29,8 +29,8 @@ public class miniCubeAttack : MonoBehaviour {
     {
         if (collision.gameObject.name == "portalMultiplier")
         {
-            float randZ = rnd.Next(12, 24);
-            float randX = rnd.Next(-1, 3);
+            float randZ = rnd.Next(335, 390);
+            float randX = rnd.Next(310, 330);
 
             Instantiate(miniCubePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.identity);
             Instantiate(miniCubePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.identity);
