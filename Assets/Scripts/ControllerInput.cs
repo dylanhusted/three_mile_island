@@ -28,7 +28,7 @@ public class ControllerInput : MonoBehaviour {
     private void RaycastGun() {
         RaycastHit hit;
         if (Physics.Raycast(gunBarrelTransform.position, gunBarrelTransform.forward, out hit)) {
-            if (hit.collider.gameObject.CompareTag("Cube")) {
+            if (hit.collider.gameObject.CompareTag("Snake")) {
                 Destroy(hit.collider.gameObject);
                 userPoints += 25;
             }
