@@ -20,7 +20,7 @@ public class SnakeAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (collided == false) {
-            transform.position += new Vector3(0.05f, 0.0f, 0.0f);
+            transform.position += new Vector3(0.2f, 0.0f, 0.0f);
         }
     }
 

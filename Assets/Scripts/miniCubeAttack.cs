@@ -21,7 +21,7 @@ public class miniCubeAttack : MonoBehaviour {
 	void Update () {
         if (collided == false)
         {
-            transform.position += new Vector3(0.0f, 0.0f, -0.1f);
+            transform.position += new Vector3(0.4f, 0.0f, 0.0f);
         }
     }
 
