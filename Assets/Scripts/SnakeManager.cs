@@ -6,7 +6,7 @@ public class SnakeManager : MonoBehaviour {
 
     public GameObject snakePrefab;
     public GameObject startMenu;
-    public GameObject miniCubePrefab;
+    public GameObject miniSnakePrefab;
     public static bool startMenuActive = true;
 
     // Use this for initialization
@@ -23,7 +23,7 @@ public class SnakeManager : MonoBehaviour {
             if (OVRInput.GetDown(OVRInput.Button.One))
             {
                 SnakeGenerate();
-                InvokeRepeating("MiniCubeGenerate", 3.0f, 25.0f);
+                InvokeRepeating("MiniSnakeGenerate", 3.0f, 25.0f);
                 startMenu.SetActive(false);
                 startMenuActive = false;
                 TextMesh healthStatusText = GameObject.Find("healthStatus").GetComponent<TextMesh>();
@@ -39,8 +39,8 @@ public class SnakeManager : MonoBehaviour {
         Instantiate(snakePrefab, new Vector3(327f, 2.6f, 403.2f), Quaternion.Euler(0, 110, 0));
     }
 
-    private void MiniCubeGenerate()
+    private void MiniSnakeGenerate()
     {
-        Instantiate(miniCubePrefab, new Vector3(307.7f, 2.6f, 403.2f), Quaternion.identity);
+        Instantiate(miniSnakePrefab, new Vector3(307.7f, 2.6f, 403.2f), Quaternion.identity);
     }
 }
