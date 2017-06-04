@@ -31,9 +31,10 @@ public class miniCubeAttack : MonoBehaviour {
         {
             float randZ = rnd.Next(335, 390);
             float randX = rnd.Next(310, 330);
-
             Instantiate(miniCubePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.identity);
-            Instantiate(miniCubePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.identity);
+            float randZ2 = rnd.Next(335, 390);
+            float randX2 = rnd.Next(310, 330);
+            Instantiate(miniCubePrefab, new Vector3(randX2, 1.0f, randZ2), Quaternion.identity);
             collided = true;
         }
         if (collision.gameObject.name == "OVRPlayerController")

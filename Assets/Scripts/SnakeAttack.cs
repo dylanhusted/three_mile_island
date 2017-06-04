@@ -30,9 +30,10 @@ public class SnakeAttack : MonoBehaviour {
         {
             float randZ = rnd.Next(290, 435);
             float randX = rnd.Next(280, 375);
-
             Instantiate(snakePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.Euler(0, 110, 0));
-            Instantiate(snakePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.Euler(0, 110, 0));
+            float randZ2 = rnd.Next(290, 435);
+            float randX2 = rnd.Next(280, 375);
+            Instantiate(snakePrefab, new Vector3(randX2, 1.0f, randZ2), Quaternion.Euler(0, 110, 0));
             collided = true;
         }
         if (collision.gameObject.name == "OVRPlayerController")
