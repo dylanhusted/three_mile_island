@@ -28,8 +28,8 @@ public class SnakeAttack : MonoBehaviour {
     {
         if (collision.gameObject.name == "portalMultiplier")
         {
-            float randZ = rnd.Next(12, 24);
-            float randX = rnd.Next(-1, 3);
+            float randZ = rnd.Next(290, 435);
+            float randX = rnd.Next(280, 375);
 
             Instantiate(snakePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.identity);
             Instantiate(snakePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.identity);
