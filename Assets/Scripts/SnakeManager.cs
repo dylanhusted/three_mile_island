@@ -34,13 +34,13 @@ public class SnakeManager : MonoBehaviour {
 
     private void SnakeGenerate()
     {
-        Instantiate(snakePrefab, new Vector3(327f, 0.0f, 323.8f), Quaternion.Euler(0, 110, 0));
-        Instantiate(snakePrefab, new Vector3(327f, 0.0f, 366.6f), Quaternion.Euler(0, 110, 0));
+        Instantiate(snakePrefab, new Vector3(327f, 0.0f, 315.8f), Quaternion.Euler(0, 110, 0));
+        Instantiate(snakePrefab, new Vector3(327f, 0.0f, 333.0f), Quaternion.Euler(0, 110, 0));
         Instantiate(snakePrefab, new Vector3(327f, 0.0f, 403.2f), Quaternion.Euler(0, 110, 0));
     }
 
     private void MiniSnakeGenerate()
     {
-        Instantiate(miniSnakePrefab, new Vector3(307.7f, 2.6f, 403.2f), Quaternion.Euler(0, 110, 0));
+        Instantiate(miniSnakePrefab, new Vector3(307.7f, 0.0f, 403.2f), Quaternion.Euler(0, 110, 0));
     }
 }

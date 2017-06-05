@@ -20,7 +20,7 @@ public class SnakeAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (collided == false) {
-            transform.position += new Vector3(0.2f, 0.0f, 0.0f);
+            transform.position += new Vector3(0.35f, 0.0f, 0.0f);
         }
     }
 
@@ -30,10 +30,10 @@ public class SnakeAttack : MonoBehaviour {
         {
             float randZ = rnd.Next(290, 435);
             float randX = rnd.Next(280, 375);
-            Instantiate(snakePrefab, new Vector3(randX, 1.0f, randZ), Quaternion.Euler(0, 110, 0));
+            Instantiate(snakePrefab, new Vector3(randX, 0.0f, randZ), Quaternion.Euler(0, 110, 0));
             float randZ2 = rnd.Next(290, 435);
             float randX2 = rnd.Next(280, 375);
-            Instantiate(snakePrefab, new Vector3(randX2, 1.0f, randZ2), Quaternion.Euler(0, 110, 0));
+            Instantiate(snakePrefab, new Vector3(randX2, 0.0f, randZ2), Quaternion.Euler(0, 110, 0));
             collided = true;
             Destroy(this.gameObject);
         }
