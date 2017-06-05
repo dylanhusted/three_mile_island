@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class SnakeManager : MonoBehaviour {
 
@@ -8,10 +10,11 @@ public class SnakeManager : MonoBehaviour {
     public GameObject startMenu;
     public GameObject miniSnakePrefab;
     public static bool startMenuActive = true;
+    public System.Random rnd = new System.Random();
 
     // Use this for initialization
     void Start () {
-        
+    
     }
 	
 	// Update is called once per frame
@@ -34,9 +37,22 @@ public class SnakeManager : MonoBehaviour {
 
     private void SnakeGenerate()
     {
-        Instantiate(snakePrefab, new Vector3(327f, 0.0f, 315.8f), Quaternion.Euler(0, 110, 0));
-        Instantiate(snakePrefab, new Vector3(327f, 0.0f, 333.0f), Quaternion.Euler(0, 110, 0));
-        Instantiate(snakePrefab, new Vector3(327f, 0.0f, 403.2f), Quaternion.Euler(0, 110, 0));
+        Scene current_scene = SceneManager.GetActiveScene();
+        if (current_scene.name == "escape")
+        {
+            for (var i = 0; i < 25; i++)
+            {
+                float randZ = rnd.Next(290, 435);
+                float randX = rnd.Next(280, 375);
+                Instantiate(snakePrefab, new Vector3(randX, 0.0f, randZ), Quaternion.Euler(0, 110, 0));
+            }
+        }
+        else
+        {
+            Instantiate(snakePrefab, new Vector3(327f, 0.0f, 315.8f), Quaternion.Euler(0, 110, 0));
+            Instantiate(snakePrefab, new Vector3(327f, 0.0f, 333.0f), Quaternion.Euler(0, 110, 0));
+            Instantiate(snakePrefab, new Vector3(327f, 0.0f, 403.2f), Quaternion.Euler(0, 110, 0));
+        }
     }
 
     private void MiniSnakeGenerate()

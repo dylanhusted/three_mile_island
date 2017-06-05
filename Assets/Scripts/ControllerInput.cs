@@ -23,7 +23,7 @@ public class ControllerInput : MonoBehaviour {
         }
         TextMesh pointsText = GameObject.Find("pointsTextMesh").GetComponent<TextMesh>();
         pointsText.text = "Points: " + System.Environment.NewLine + userPoints;
-	}
+    }
 
     private void RaycastGun() {
         RaycastHit hit;

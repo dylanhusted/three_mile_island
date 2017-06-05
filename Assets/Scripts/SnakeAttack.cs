@@ -6,8 +6,6 @@ public class SnakeAttack : MonoBehaviour {
 
     public GameObject snakePrefab;
     public System.Random rnd = new System.Random();
-    public float randZ;
-    public float randX;
     public bool collided = false;
     private int finalPoints;
 
