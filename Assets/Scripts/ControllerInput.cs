@@ -21,6 +21,10 @@ public class ControllerInput : MonoBehaviour {
             audioSource.Play();
             RaycastGun();
         }
+        if (OVRInput.Get(OVRInput.Button.PrimaryThumbstick) && OVRInput.Get(OVRInput.Button.SecondaryThumbstick))
+        {
+            UnityEngine.VR.InputTracking.Recenter();
+        }
         TextMesh pointsText = GameObject.Find("pointsTextMesh").GetComponent<TextMesh>();
         pointsText.text = "Points: " + System.Environment.NewLine + userPoints;
     }
