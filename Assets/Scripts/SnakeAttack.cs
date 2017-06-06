@@ -55,6 +55,10 @@ public class SnakeAttack : MonoBehaviour {
         ControllerInput.userPoints = 0;
         // Open start menu
         SnakeManager.startMenuActive = true;
+        // Transport user to starting position
+        GameObject user = GameObject.FindGameObjectWithTag("Player");
+        user.transform.position = new Vector3(423.0f, 9.06f, 333.0f); Quaternion.Euler(0, -65, 0);
+        UnityEngine.VR.InputTracking.Recenter();
         // Notify restart in HUD
         if (result == true)
         {
