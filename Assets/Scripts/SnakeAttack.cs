@@ -38,13 +38,13 @@ public class SnakeAttack : MonoBehaviour {
         if (collision.gameObject.name == "OVRPlayerController")
         {
             Debug.Log("Player hit");
-            RestartGame();
+            RestartGame(false);
         }
     }
 
-    public void RestartGame()
+    public void RestartGame(bool result)
     {
-        // Delete all cubes
+        // Delete all snakes
         Destroy(GameObject.FindGameObjectWithTag("Snake"));
         GameObject[] snakes = GameObject.FindGameObjectsWithTag("Snake");
         foreach (GameObject snake in snakes)
@@ -56,7 +56,15 @@ public class SnakeAttack : MonoBehaviour {
         // Open start menu
         SnakeManager.startMenuActive = true;
         // Notify restart in HUD
-        TextMesh healthStatusText = GameObject.Find("healthStatus").GetComponent<TextMesh>();
-        healthStatusText.text = "You've " + System.Environment.NewLine + "been hit!" + System.Environment.NewLine + finalPoints + " points" + System.Environment.NewLine + "earned";
+        if (result == true)
+        {
+            TextMesh healthStatusText = GameObject.Find("healthStatus").GetComponent<TextMesh>();
+            healthStatusText.text = "You escaped" + System.Environment.NewLine + "the island!" + System.Environment.NewLine + finalPoints + " points" + System.Environment.NewLine + "earned";
+        }
+        else
+        {
+            TextMesh healthStatusText = GameObject.Find("healthStatus").GetComponent<TextMesh>();
+            healthStatusText.text = "You've " + System.Environment.NewLine + "been hit!" + System.Environment.NewLine + finalPoints + " points" + System.Environment.NewLine + "earned";
+        }
     }
 }
