@@ -229,7 +229,12 @@ public class OVRPlayerController : MonoBehaviour
 
 		bool dpad_move = false;
 
-		if (OVRInput.Get(OVRInput.Button.DpadUp))
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            Jump();
+        }
+
+            if (OVRInput.Get(OVRInput.Button.DpadUp))
 		{
 			moveForward = true;
 			dpad_move   = true;
@@ -248,9 +253,9 @@ public class OVRPlayerController : MonoBehaviour
 			 (moveBack && moveLeft)    || (moveBack && moveRight) )
 			MoveScale = 0.70710678f;
 
-		// No positional movement if we are in the air
-		if (!Controller.isGrounded)
-			MoveScale = 0.0f;
+		//// No positional movement if we are in the air
+		//if (!Controller.isGrounded)
+		//	MoveScale = 0.0f;
 
 		MoveScale *= SimulationRate * Time.deltaTime;
 
