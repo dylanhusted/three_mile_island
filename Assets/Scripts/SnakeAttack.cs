@@ -12,7 +12,7 @@ public class SnakeAttack : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-
+        
     }
 	
 	// Update is called once per frame
@@ -38,7 +38,15 @@ public class SnakeAttack : MonoBehaviour {
         if (collision.gameObject.name == "OVRPlayerController")
         {
             Debug.Log("Player hit");
-            RestartGame(false);
+            // Reduce health
+            SnakeManager.health -= 40;
+            TextMesh healthStatusText = GameObject.Find("healthStatus").GetComponent<TextMesh>();
+            healthStatusText.text = string.Format("Health:\n {0}", SnakeManager.health);
+            // Restart game if user is killed
+            if (SnakeManager.health <= 0)
+            {
+                RestartGame(false);
+            }
         }
     }
 
@@ -49,10 +57,11 @@ public class SnakeAttack : MonoBehaviour {
         GameObject[] snakes = GameObject.FindGameObjectsWithTag("Snake");
         foreach (GameObject snake in snakes)
             GameObject.Destroy(snake);
-        // Reset Score
+        // Reset score and health
         finalPoints = ControllerInput.userPoints;
         Debug.Log("End game points: " + finalPoints);
         ControllerInput.userPoints = 0;
+        SnakeManager.health = 100;
         // Open start menu
         SnakeManager.startMenuActive = true;
         // Transport user to starting position
@@ -68,7 +77,7 @@ public class SnakeAttack : MonoBehaviour {
         else
         {
             TextMesh healthStatusText = GameObject.Find("healthStatus").GetComponent<TextMesh>();
-            healthStatusText.text = "You've " + System.Environment.NewLine + "been hit!" + System.Environment.NewLine + finalPoints + " points" + System.Environment.NewLine + "earned";
+            healthStatusText.text = "You were" + System.Environment.NewLine + "killed!" + System.Environment.NewLine + finalPoints + " points" + System.Environment.NewLine + "earned";
         }
     }
 }

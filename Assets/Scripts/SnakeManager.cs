@@ -11,10 +11,11 @@ public class SnakeManager : MonoBehaviour {
     public GameObject miniSnakePrefab;
     public static bool startMenuActive = true;
     public System.Random rnd = new System.Random();
+    public static int health = 100;
 
     // Use this for initialization
     void Start () {
-    
+        
     }
 	
 	// Update is called once per frame
@@ -30,7 +31,11 @@ public class SnakeManager : MonoBehaviour {
                 startMenu.SetActive(false);
                 startMenuActive = false;
                 TextMesh healthStatusText = GameObject.Find("healthStatus").GetComponent<TextMesh>();
-                healthStatusText.text = "";
+                if (health < 0)
+                {
+                    health = 0;
+                }
+                healthStatusText.text = string.Format("Health:\n {0}", health);
             }
         }
     }
